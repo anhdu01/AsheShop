@@ -66,6 +66,30 @@ public class ModelProduct {
 		
 		return result;
 	}
+	public int addId1(String link, int id){
+		int result = 0;
+			conn = mConnect.getConnectSQL();
+			String sql ="UPDATE product SET idorder= ? WHERE url = '' AND idorder=0 AND image = '' LIMIT 1";
+			try {
+				pst = conn.prepareStatement(sql);
+				pst.setInt(1, id);
+				pst.executeUpdate();
+				result = 1;
+			} catch (SQLException e) {
+				result = 0;
+				e.printStackTrace();
+			}finally{
+				try {
+					pst.close();
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		
+		return result;
+	}
 	public Product getItem(int id, String link){
 		Product objPro = null;
 		String sql = "SELECT * FROM product WHERE idorder = ? AND url LIKE '%"+link+"%'";
@@ -211,5 +235,32 @@ public class ModelProduct {
 	public float getSum1(int id) {
 		ModelProduct mPro = new ModelProduct();
 		return (mPro.getSum(id) - mPro.getItem1(id).getPaid());
+	}
+	public int editpay(int id,float pay) {
+		int result=0;
+		ModelProduct mPro = new ModelProduct();
+		pay += mPro.getItem1(id).getPaid();
+		LibraryString lib = new LibraryString();
+		String sql ="UPDATE product SET paid = ? WHERE idorder = ? LIMIT 1";
+		conn = mConnect.getConnectSQL();
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setFloat(1, pay);
+			pst.setFloat(2,id);
+			pst.executeUpdate();
+			result = 1;
+		} catch (SQLException e) {
+			result = 0;
+			e.printStackTrace();
+		}finally{
+			try {
+				pst.close();
+				conn.close();
+			} catch (SQLException e) {
+				result = 0;
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 }

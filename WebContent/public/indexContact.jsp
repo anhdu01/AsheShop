@@ -137,7 +137,7 @@
 											<div class="col-md-12" style="text-align: center;">
 												<button href="javascript:;"
 													onclick="javascript:$('#send_content input').val('');$('#send_content textarea').val('');"
-													class="btn btn-danger">LÀM LẠI</button>
+													class="btn btn-danger">XÓA</button>
 												<button type="submit" name="submit" value="GỬI"
 													class="btn button-add btn-success create-button">GỬI</button>
 											</div>

@@ -18,7 +18,7 @@
 				</div>
 				<div class="col-md-12 col-md-12">
 					<div class="col-md-4">
-						<img src="<%=objPro.getImage()%>">
+						<img style="width: 380px" src="<%=objPro.getImage()%>">
 					</div>
 					<div class="col-md-6">
 						<label for="" class="col-md-4">Giá SP:</label>

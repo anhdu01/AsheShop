@@ -223,6 +223,8 @@
     	msg1 = request.getParameter("id");
     }else if(request.getParameter("contact")!=null){
     	msg = request.getParameter("contact");
+    }else if(request.getParameter("pay")!=null){
+    	msg = request.getParameter("pay");
     }
  	if(msg.equals("register")){
 %>
@@ -240,6 +242,10 @@
 	<%}else if(msg.equals("contact0")){ %>
 	<script type="text/javascript">
 	swal("Lỗi rồi!", "Gửi Thông Tin Không Thành Công!!!")
+	</script>
+	<%}else if(msg.equals("pay0")){ %>
+	<script type="text/javascript">
+	swal("Thành công!", "Chúc mừng bạn đã thanh toán thành công!!!")
 	</script>
 	<%}else if(msg.equals("contact1")){ %>
 	<script type="text/javascript">

@@ -42,43 +42,7 @@ public class ModelOrder {
 		}
 		return idorder;
 	}
-	/*public ArrayList<Order> getList(){
-		ArrayList<Order> alOrder = new ArrayList<>();
-		conn = mConnect.getConnectSQL();
-		String sql = "SELECT * FROM order1";
-		try {
-			pst = conn.prepareStatement(sql);
-			rs = pst.executeQuery();
-			while(rs.next()){
-				int idorder = rs.getInt("idorder");
-				String name = rs.getString("name");
-				String cmt = rs.getString("cmt");
-				String email = rs.getString("email");
-				String address = rs.getString("address");
-				String phone = rs.getString("phone");
-				String link = rs.getString("link");
-				String notes = rs.getString("notes");
-				int price = rs.getInt("price");
-				boolean type = rs.getBoolean("type");
-				Order objOrder = new Order(idorder, name, cmt, email, address, phone, link, notes, price,type);
-				alOrder.add(objOrder);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally{
-			try {
-				rs.close();
-				pst.close();
-				conn.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return alOrder;
-	}*/
-	public int addItem(Order objOrder){
+		public int addItem(Order objOrder){
 		int result = 0;
 		LibraryString lib = new LibraryString();
 		conn = mConnect.getConnectSQL();
@@ -112,6 +76,8 @@ public class ModelOrder {
 	}
 	
 	public int delItem(int rid){
+		ModelStatus mStatus = new ModelStatus();
+		mStatus.delList(rid);
 		int result = 0;
 		String sql = "DELETE FROM order1 WHERE idorder = ?";
 		conn = mConnect.getConnectSQL();

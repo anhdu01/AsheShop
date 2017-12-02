@@ -16,7 +16,7 @@
   							<div class="form-group">
     							<input name="input" type="text" class="form-control" id="exampleInputPassword2" placeholder="Nhập một từ khóa...">
   							</div>
-  							<button class="button-add btn btn-primary create-button" name="submit" type="submit">Tìm Kiếm</button> 
+  							<button class="button-add btn btn-primary create-button" name="submit" type="submit"><i class="fa fa-search"></i> Tìm Kiếm</button> 
 						</form>
 		    		</div>
 				</div>	

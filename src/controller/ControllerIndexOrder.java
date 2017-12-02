@@ -52,6 +52,11 @@ public class ControllerIndexOrder extends HttpServlet {
 		Document doc;
 		ModelProduct mPro = new ModelProduct();
 		ArrayList<Product> alPro = new ArrayList<>();
+		if (request.getParameter("price") != null) {
+			int idorder = Integer.parseInt(request.getParameter("order_code"));
+			float pay = Float.parseFloat(request.getParameter("price"));
+			mPro.editpay(idorder, pay);
+		}
 		if (request.getParameter("submit1")!= null) {
 			String price = "";
 			String name = "";
@@ -90,7 +95,7 @@ public class ControllerIndexOrder extends HttpServlet {
 		} else {
 		if(request.getParameter("submit")!=null){
 			String link = request.getParameter("link");
-			Float price = Float.parseFloat(request.getParameter("price"));
+			Float price = Float.parseFloat(request.getParameter("pricevn"));
 			String name = request.getParameter("name"); 
 			name = new String(name.getBytes("ISO-8859-1"), "UTF-8");
 			String cmt = request.getParameter("cmt");
@@ -102,7 +107,17 @@ public class ControllerIndexOrder extends HttpServlet {
 			notes = new String(notes.getBytes("ISO-8859-1"), "UTF-8");
 			Order objOrder = new Order(0, name, cmt, email, address, phone, link, notes, price);
 			if(mOrder.addItem(objOrder)>0){
-				mPro.addId(link, mOrder.getId(cmt, link));
+				if (!link.equals("")) {
+					mPro.addId(link, mOrder.getId(cmt, link));
+				} else {
+					Product obj = new Product();
+					String name1 = notes;
+					String price1 = String.valueOf(price);
+					String image1 ="";
+					obj = new Product(name1, price1, link, image1);
+					mPro.addItem(obj);
+					mPro.addId1(link, mOrder.getId(cmt, link));
+				}
 				request.setAttribute("NDT", mRate.getRate("NDT"));
 				request.setAttribute("USD", mRate.getRate("USD"));
 				response.sendRedirect(request.getContextPath()+"/indexOrder?id="+mOrder.getId(cmt, link));

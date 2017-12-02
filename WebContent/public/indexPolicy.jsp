@@ -34,7 +34,7 @@
 						<div class="col-sm-12">
 							<div class="row detail-section-index">
 								<div class="col-sm-12">
-									<a href="#" class=""><h4><%=objPol.getNamePolicy()%></h4></a>
+									<a href="<%=request.getContextPath()%>/detailPolicy?pid=<%=objPol.getIdPolicy()%>"><h4><%=objPol.getNamePolicy()%></h4></a>
 								</div>
 								<div class="review">
 
@@ -47,12 +47,12 @@
 									</div>
 									<div class="col-sm-6">
 										<p><%=objPol.getPreviewPolicy()%></p>
-										<div class="wraper">
+										<%-- <div class="wraper">
 											<a
 												href="<%=request.getContextPath()%>/detailPolicy?pid=<%=objPol.getIdPolicy()%>"><big>Xem
 													<i class="fa fa-long-arrow-right"></i>
 											</big></a>
-										</div>
+										</div> --%>
 									</div>
 								</div>
 							</div>

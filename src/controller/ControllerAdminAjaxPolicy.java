@@ -37,20 +37,18 @@ public class ControllerAdminAjaxPolicy extends HttpServlet {
 		ModelPolicy  mPol = new ModelPolicy();
 		PrintWriter out = response.getWriter();
 		int id = Integer.valueOf(request.getParameter("aid"));
-		System.out.println(id);
 		int active = Integer.valueOf(request.getParameter("aactive"));
-		System.out.println(active);
 		String imgActive = "";
 		String result = "";
 		if(mPol.setActive(id, active) > 0){
 			if(active == 1){
-				imgActive = request.getContextPath() + "/templates/admin/images/icon-fail.png";
+				imgActive = request.getContextPath() + "/templates/admin/images/nottick.png";
 				active = 0;
 			}else{
-				imgActive = request.getContextPath() + "/templates/admin/images/icon-success.png";
+				imgActive = request.getContextPath() + "/templates/admin/images/tick.png";
 				active = 1;
 			}
-			result += "<a href='avascript:void(0)' onclick='return setActive("+id +","+ active +")' title=''><img style='width:30px; height:30px;'' src='" + imgActive + "'></a>";
+			result = "<a href='avascript:void(0)' onclick='return setActive("+id +","+ active +")' title=''><img style='width:30px; height:30px;'' src='" + imgActive + "'></a>";
 			out.print(result);
 		}
 	}

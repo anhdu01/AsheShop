@@ -8,7 +8,7 @@
 			<div class="col-md-12">
 				<form class="form-horizontal form_addPolicy" enctype="multipart/form-data" role="form" method="post" action="<%=request.getContextPath() %>/admin/addPolicy">
 					<div class="form-group">
-    					<label for="inputEmail3" class="col-sm-2 control-label">Tên sản phẩm</label>
+    					<label for="inputEmail3" class="col-sm-2 control-label">Tên chính sách</label>
    						<div class="col-sm-10">
       						<input type="text" name="nameProduct" style="width:652px;" class="form-control required" id="username" placeholder="">
     					</div>

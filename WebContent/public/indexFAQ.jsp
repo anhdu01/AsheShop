@@ -138,8 +138,8 @@
 								<div id="6" class="panel-collapse collapse" role="tabpanel"
 									aria-labelledby="headingThree">
 									<div class="panel-body">
-										Quý khách vui lòng tham khảo cước vận chuyển từ kho Chipo
-										Trung Quốc về kho Chipo Việt Nam <a href="#">tại đây.</a>
+										Quý khách vui lòng tham khảo cước vận chuyển từ kho ASHE SHOP
+										Trung Quốc về kho ASHE SHOP Việt Nam <a href="#">tại đây.</a>
 									</div>
 								</div>
 							</div>

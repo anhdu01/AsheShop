@@ -31,7 +31,7 @@
 						<div class="col-sm-12">
 							<div class="row detail-section-index">
 								<div class="col-md-12">
-									<a href="#" class=""><h4><%=objNews.getNameNews()%></h4></a>
+									<a href="<%=request.getContextPath()%>/detailNews?nid=<%=objNews.getIdNews()%>" class=""><h4><%=objNews.getNameNews()%></h4></a>
 								</div>
 								<div class="review">
 
@@ -44,12 +44,6 @@
 									</div>
 									<div class="col-sm-6">
 										<p><%=objNews.getPreviewNews()%></p>
-										<div class="wraper">
-											<a
-												href="<%=request.getContextPath()%>/detailNews?nid=<%=objNews.getIdNews()%>"><big>Xem
-													<i class="fa fa-long-arrow-right"></i>
-											</big></a>
-										</div>
 									</div>
 								</div>
 							</div>

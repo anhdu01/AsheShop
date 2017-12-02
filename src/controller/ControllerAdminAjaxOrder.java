@@ -42,13 +42,13 @@ public class ControllerAdminAjaxOrder extends HttpServlet {
 		String result = "";
 		if(mPro.setActive(id, active) > 0){
 			if(active == 1){
-				imgActive = request.getContextPath() + "/templates/admin/images/icon-fail.png";
+				imgActive = request.getContextPath() + "/templates/admin/images/nottick.png";
 				active = 0;
 			}else{
-				imgActive = request.getContextPath() + "/templates/admin/images/icon-success.png";
+				imgActive = request.getContextPath() + "/templates/admin/images/tick.png";
 				active = 1;
 			}
-			result += "<a href='avascript:void(0)' onclick='return setActive("+id +","+ active +")' title=''><img style='width:30px; height:30px;'' src='" + imgActive + "'></a>";
+			result = "<a href='avascript:void(0)' onclick='return setActive("+id +","+ active +")' title=''><img style='width:30px; height:30px;'' src='" + imgActive + "'></a>";
 			out.print(result);
 		}
 	}

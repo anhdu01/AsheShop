@@ -41,8 +41,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<input class="button-add btn btn-success create-button"
-					name="submit" type="submit" value="Tìm kiếm" />
+				<button class="button-add btn btn-success create-button"
+					name="submit" type="submit"><i class="fa fa-search"></i> Tìm kiếm</button>
 			</div>
 		</form>
 	</div>

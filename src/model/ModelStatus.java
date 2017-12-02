@@ -191,4 +191,27 @@ public class ModelStatus {
 		}
 		return result;
 	}
+	public int delList(int id){
+		int result = 0;
+		String sql = "DELETE FROM status WHERE idorder = ?";
+		conn = mConnect.getConnectSQL();
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			pst.executeUpdate();
+			result =1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				pst.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 }

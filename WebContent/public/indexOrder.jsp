@@ -122,8 +122,8 @@
 											style="color: red"><big>*</big></a>:
 										</label>
 										<div class="col-sm-10">
-											<input style="width: 300px;" type="text" name="price"
-												class="form-control" id="price" placeholder="">
+											<input style="width: 300px;" type="text" name="pricevn"
+												class="form-control" id="pricevn" placeholder="">
 										</div>
 									</div>
 									<div class="form-group">
@@ -187,8 +187,7 @@
 									<div class="col-md-7" style="text-align: center;">
 									<button href="javascript:;"
 										onclick="javascript:$('#send_content input').val('');$('#send_content textarea').val('');"
-										class="btn btn-danger" style="margin-bottom: 10px;">LÀM
-										LẠI</button>
+										class="btn btn-danger" style="margin-bottom: 10px;">XÓA</button>
 									<button type="submit" name="submit" value="GỬI"
 										class="btn button-add btn-success create-button"
 										style="margin-bottom: 10px;">GỬI</button>
@@ -205,12 +204,12 @@
 					function getValue() {
 						var price = parseFloat($('#price11').val());
 						var value = price*<%=(Float) request.getAttribute("USD")%>;
-						$('#price').val(parseFloat(value).toFixed(3));
+						$('#pricevn').val(parseFloat(value).toFixed(3));
 					}
 					function getValue2() {
 						var price = parseFloat($('#price12').val());
 						var value = price*<%=(Float) request.getAttribute("NDT")%>;
-						$('#price').val(parseFloat(value).toFixed(3));
+						$('#pricevn').val(parseFloat(value).toFixed(3));
 					}
 					$(document)
 							.ready(
@@ -219,7 +218,7 @@
 												.validate(
 														{
 															rules : {
-																price : {
+																pricevn : {
 																	required : true,
 																},
 																name : {
@@ -239,7 +238,7 @@
 																},
 															},
 															messages : {
-																price : {
+																pricevn : {
 																	required : "<span style='color:red;font-weight:bold;font-size:13px;'>Vui lòng nhập Giá sản phẩm!</span>",
 																},
 																name : {
